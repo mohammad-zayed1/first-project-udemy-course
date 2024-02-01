@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-xs-12">
-    <img alt="" class="img-fluid" src="">
+    <img alt="{{recipe.name}}" class="img-fluid" src="{{recipe.imagePath}}">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>Recipe Name</h1>
+    <h1>{{ recipe.name }}</h1>
   </div>
 </div>
 <div class="row">
@@ -23,8 +23,14 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">Description</div>
+  <div class="col-xs-12 fs-4 text-danger ">{{ recipe.description }}</div>
 </div>
 <div class="row">
-  <div class="col-xs-12">Ingredient</div>
+  <div class="col-xs-12">
+    <div class="fs-5 fw-bold text-info">Ingredients :</div>
+    @for (ingredient of recipe.ingredients; track recipe.name) {
+      <p class="fw-bold">{{ ingredient }}</p>
+    }
+
+  </div>
 </div>

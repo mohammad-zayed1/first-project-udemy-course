@@ -1,9 +1,15 @@
-<app-header></app-header>
+<app-header (page)="onSelect($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+
+      @if (pageName === "recipe") {
+        <app-recipes></app-recipes>
+      } @else if (pageName === "shopping-list") {
+        <app-shopping-list></app-shopping-list>
+      }
+
+
     </div>
   </div>
 </div>
